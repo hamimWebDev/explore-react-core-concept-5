@@ -2,12 +2,30 @@ import React from "react";
 import "./App.css";
 
 const App = () => {
+  const mobile1 = {
+    name: "sam1",
+    price: 12000,
+    quantity: 1,
+  };
+  const mobile2 = {
+    name: "sam2",
+    price: 13000,
+    quantity: 2,
+  };
+  const mobile3 = {
+    name: "sam3",
+    price: 14000,
+    quantity: 3,
+  };
   return (
     <div>
       <h1>Vite + React</h1>
       <Person></Person>
       <Student></Student>
       <Developer></Developer>
+      <Mobile mobile={mobile1}></Mobile>
+      <Mobile mobile={mobile2}></Mobile>
+      <Mobile mobile={mobile3}></Mobile>
     </div>
   );
 };
@@ -56,6 +74,18 @@ const Developer = () => {
 };
 
 
+// Explore Jsx props
 
+const Mobile = ({ mobile }) => {
+  console.log(mobile);
+  const { name, price, quantity } = mobile;
+  return (
+    <div className="student">
+      <p>Name: {name}</p>
+      <p>Price: {price}</p>
+      <p>Quantity: {quantity}</p>
+    </div>
+  );
+};
 
 export default App;

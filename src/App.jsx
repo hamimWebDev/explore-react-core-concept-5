@@ -6,8 +6,8 @@ const App = () => {
     <div>
       <h1>Vite + React</h1>
       <Person></Person>
-      <Person></Person>
       <Student></Student>
+      <Developer></Developer>
     </div>
   );
 };
@@ -26,8 +26,8 @@ const Person = () => {
   );
 };
 
-// Explode jsx
-// use className
+// Explore jsx
+// Explore className
 const Student = () => {
   const student = { name: "Asif", age: 21 };
   return (
@@ -38,4 +38,24 @@ const Student = () => {
     </div>
   );
 };
+
+// Explore Object Style
+const Developer = () => {
+  const devStyle = {
+    border: "2px solid tomato",
+    padding: "20px",
+    margin: "20px",
+    borderRadius: "15px",
+  };
+  return (
+    <div style={devStyle}>
+      <h1>Dev DEv DeVo</h1>
+      <p>Codding: Explore React</p>
+    </div>
+  );
+};
+
+
+
+
 export default App;

@@ -1,5 +1,25 @@
 import React from "react";
 import "./App.css";
+import Actor from "./Actor";
+import Singer from "./Singer";
+const actors = [
+  "Tom Hanks",
+  "Meryl Streep",
+  "Leonardo DiCaprio",
+  "Jennifer Lawrence",
+  "Brad Pitt",
+  "Angelina Jolie",
+  "Denzel Washington",
+  "Julia Roberts",
+];
+
+const singers = [
+  { id: 1, name: "Adele", age: 33 },
+  { id: 2, name: "Ed Sheeran", age: 31 },
+  { id: 3, name: "Beyoncé", age: 40 },
+  { id: 4, name: "Taylor Swift", age: 32 },
+  { id: 5, name: "Justin Bieber", age: 28 },
+];
 
 const App = () => {
   const mobile1 = {
@@ -20,6 +40,16 @@ const App = () => {
   return (
     <div>
       <h1>Vite + React</h1>
+      <div>
+        {actors.map((actor) => (
+          <Actor name={actor}></Actor>
+        ))}
+      </div>
+      <div>
+        {singers.map((singer) => (
+          <Singer key={singer.id} singer={singer}></Singer>
+        ))}
+      </div>
       <Person></Person>
       <Student></Student>
       <Developer></Developer>
@@ -73,11 +103,9 @@ const Developer = () => {
   );
 };
 
-
 // Explore Jsx props
 
 const Mobile = ({ mobile }) => {
-  console.log(mobile);
   const { name, price, quantity } = mobile;
   return (
     <div className="student">
